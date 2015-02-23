@@ -15,7 +15,7 @@ appHelper.runApp(function(app, db) {
 	});
   
   app.get("/rating/:rating", function (req, res) {
-    db.findArray({ rating: { "$gte" : parseInt(req.params.rating) }, function(results) {
+    db.findArray({ rating: { "$gte" : parseInt(req.params.rating) }}, function(results) {
       res.render("index.swig", { locations: results});
     });
 	});
